@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example1", "example1\example1.vcxproj", "{C1114124-6D50-4361-B700-0EE4069C3A0E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example2", "example2\example2.vcxproj", "{9D548719-5CC8-449D-A494-1436D28568F9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example3", "example3\example3.vcxproj", "{D5FF08BB-55B9-4157-B05A-E15540DC9A43}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C1114124-6D50-4361-B700-0EE4069C3A0E}.Debug|Win32.ActiveCfg = Release|Win32
+		{C1114124-6D50-4361-B700-0EE4069C3A0E}.Debug|Win32.Build.0 = Release|Win32
+		{C1114124-6D50-4361-B700-0EE4069C3A0E}.Release|Win32.ActiveCfg = Release|Win32
+		{C1114124-6D50-4361-B700-0EE4069C3A0E}.Release|Win32.Build.0 = Release|Win32
+		{9D548719-5CC8-449D-A494-1436D28568F9}.Debug|Win32.ActiveCfg = Release|Win32
+		{9D548719-5CC8-449D-A494-1436D28568F9}.Debug|Win32.Build.0 = Release|Win32
+		{9D548719-5CC8-449D-A494-1436D28568F9}.Release|Win32.ActiveCfg = Release|Win32
+		{9D548719-5CC8-449D-A494-1436D28568F9}.Release|Win32.Build.0 = Release|Win32
+		{D5FF08BB-55B9-4157-B05A-E15540DC9A43}.Debug|Win32.ActiveCfg = Release|Win32
+		{D5FF08BB-55B9-4157-B05A-E15540DC9A43}.Debug|Win32.Build.0 = Release|Win32
+		{D5FF08BB-55B9-4157-B05A-E15540DC9A43}.Release|Win32.ActiveCfg = Release|Win32
+		{D5FF08BB-55B9-4157-B05A-E15540DC9A43}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
