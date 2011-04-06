@@ -3,7 +3,7 @@ layout: post
 title: Simple Boost Example No. 1
 ---
 
-{% comment % }
+<pre>
 ========================================================================
     CONSOLE APPLICATION : example Project Overview
 ========================================================================
@@ -44,5 +44,6 @@ AppWizard uses "TODO:" comments to indicate parts of the source code you
 should add to or customize.
 
 /////////////////////////////////////////////////////////////////////////////
-{% endcomment %}
+</pre>
+
 This is the example from ["Build a simple program using Boost"](http://www.boost.org/doc/libs/1_46_1/more/getting_started/windows.html#build-a-simple-program-using-boost).
