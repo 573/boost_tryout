@@ -64,7 +64,7 @@ Have `PYTHONHOME` and `BOOSTHOME` environment variables defined, i. e.:
     BOOSTHOME=S:\Home\boost_1_46_1
 	PYTHONHOME=C:\Python26
 
-Load current Boost distribution to `%BOOSTHOME%` make a  `%HOMEDRIVE%%HOMEPATH%\user-config.jam` file containing:
+Load [current Boost distribution](http://www.boost.org/users/download/) to `%BOOSTHOME%` make a  `%HOMEDRIVE%%HOMEPATH%\user-config.jam` file containing:
 
 	# Boost.Python user configuration file.
 
@@ -82,7 +82,7 @@ Load current Boost distribution to `%BOOSTHOME%` make a  `%HOMEDRIVE%%HOMEPATH%\
 
 Have built library files for Boost with `bjam` at "Visual Studio Command Prompt (2010)" (which configures the needed environment by setting paths/variables):
 
-    cd /D S:\Home\boost_1_46_1
+    cd /D %BOOSTHOME%
 	bootstrap.bat
 	bjam toolset=msvc --build-type=complete --with-python
 
