@@ -2,4 +2,6 @@
 *.swp
 *~
 _site
-
+*.suo
+Debug/
+Release/
