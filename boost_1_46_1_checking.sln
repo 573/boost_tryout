@@ -5,7 +5,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example1", "example1\exampl
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example2", "example2\example2.vcxproj", "{9D548719-5CC8-449D-A494-1436D28568F9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example3", "example3\example3.vcxproj", "{D5FF08BB-55B9-4157-B05A-E15540DC9A43}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_example", "example3\example3.vcxproj", "{D5FF08BB-55B9-4157-B05A-E15540DC9A43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{387B66D3-AEB3-4386-9F0E-E9D5424A35FB}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

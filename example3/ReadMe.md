@@ -86,16 +86,14 @@ Have built library files for Boost with `bjam` at "Visual Studio Command Prompt 
 	bootstrap.bat
 	bjam toolset=msvc --build-type=complete --with-python
 
-Settings in our Visual Studio Solution File
+Settings in your Visual Studio Solution File
 ---
 
-As project type have chosen Win32-DLL and left the rest on defaults in the App Wizard:
-`File >> New >> Project... >> Win32 Project >> Application Type: DLL`
+As project type have chosen "Win32 Console Application... DLL" and left the rest on defaults in the App Wizard:
+`File >> New >> Project... >> Visual C++ >> Win32 >> Win32 Console Application >> Application Settings >> Application type: DLL`
 
 The Target Extension of the built DLL file is changed to `.pyd`, as this is required from Python version 2.5 on (see [this post](http://groups.google.com/group/boost-list/browse_thread/thread/93e2296dcde28088])):
-`Solution >> Project >> Properties >> Configuration Properties >> General >> General >> Target Extension: .pyd`
-
-`Solution >> Project >> Properties >> Configuration Properties >> General >> Project Defaults >> Configuration Type >> Dynamic Library (.dll)`
+`Solution >> Project >> Properties >> Configuration Properties >> General >> General >> Target Extension: .pyd` (`Solution >> Project >> Properties >> Configuration Properties >> General >> Project Defaults >> Configuration Type >> Dynamic Library (.dll)`)
 
 The directories containing the Header-Files (include) for boost and the used python engine are added
 to the C/C++-Compiler settings:
@@ -112,7 +110,7 @@ The example itself is taken from [boost.python/SimpleExample](http://wiki.python
 
 The project name must be the same as the module name: i. e. imaging you have `boost_example` then write `BOOST_PYTHON_MODULE(boost_example)` in the extensions `.cpp` file and the built files name will be `boost_example.pyd`, free to choose is the `*.cpp` files file name. 
 
-When built, the `*.pyd` file is created below the solution folder (or the output folder you declared, inside Debug/Release). At a command line prompt push into that folder, append `%BOOSTHOME%\stage\lib` (where the `boost_python-XXX.dll` etc. files are found and eventually needed additional `*.dll` files too) to the `PATH` variable and append the folder containing the `*.pyd` file to the `%PYTHONPATH%` variable). Now you may run `%PYTHONHOME%\python.exe` and therein:
+When built, the `*.pyd` file is created below the solution folder (or the output folder you declared, inside Debug/Release). At a command line prompt push into that folder, append `%BOOSTHOME%\stage\lib` (where the `boost_python-XXX.dll` - in other words your projects bundled `*.dll` files - are found) to the `PATH` variable and append the folder containing the `*.pyd` file - the build output folder - to the `%PYTHONPATH%` variable. Now you may run `%PYTHONHOME%\python.exe` and therein:
 
     >>> import boost_example
 	>>> print boost_example.greet()

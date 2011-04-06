@@ -52,12 +52,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;EXAMPLE6_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Y:\Home\dkahlenb\boost_1_46_1;$(PYTHONHOME)\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(BOOSTHOME);$(PYTHONHOME)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>Y:\Home\dkahlenb\boost_1_46_1\stage\lib;$(PYTHONHOME)\libs</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOSTHOME)\stage\lib;$(PYTHONHOME)\libs</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -68,18 +68,18 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;EXAMPLE3_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Y:\Home\dkahlenb\boost_1_46_1;$(PYTHONHOME)\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(BOOSTHOME);$(PYTHONHOME)\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>Y:\Home\dkahlenb\boost_1_46_1\stage\lib;$(PYTHONHOME)\libs</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(BOOSTHOME)\stage\lib;$(PYTHONHOME)\libs</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="ReadMe.txt" />
+    <None Include="ReadMe.md" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h" />

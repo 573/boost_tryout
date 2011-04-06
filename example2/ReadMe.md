@@ -46,5 +46,41 @@ should add to or customize.
 /////////////////////////////////////////////////////////////////////////////
 </pre>
 
-This is the example from ["Link our program to a Boost library"](http://www.boost.org/doc/libs/1_46_1/more/getting_started/windows.html#link-your-program-to-a-boost-library).
+Preparations on your system
+---
+
+Assumes you have a valid "Visual Studio 2010" installation (won't describe command line compilation with Microsoft Visual C++ 2010 Express here, although building the Boost libraries itself should work out of the box with it).
+
+Have `BOOSTHOME` environment variable defined, i. e.:
+
+    BOOSTHOME=S:\Home\boost_1_46_1
+
+Load [current Boost distribution](http://www.boost.org/users/download/) to `%BOOSTHOME%`.
+
+Have built library files for Boost with `bjam` at "Visual Studio Command Prompt (2010)" (which configures the needed environment by setting paths/variables):
+
+    cd /D %BOOSTHOME%
+	bootstrap.bat
+	bjam toolset=msvc --build-type=complete --with-regex
+
+Settings in your Visual Studio Solution File
+---
+
+As project type have chosen "Win32 Console Application" and left the rest on defaults in the App Wizard:
+`File >> New >> Project... >> Visual C++ >> Win32 >> Win32 Console Application >> Application Settings >> Application type: Console application`
+
+The directories containing the Header-Files (include) for boost are added
+to the C/C++-Compiler settings:
+`Solution >> Project >> Properties >> Configuration Properties >> C/C++ >> Additional Include Directories: $(BOOSTHOME)`
+
+The directories containing the Library-Files for boost are added
+to the Linker settings:
+`Solution >> Project >> Properties >> Configuration Properties >> Linker >> Additional Library Directories: $(BOOSTHOME)\stage\lib`
+
+Incremental linking is deactivated:
+`Solution >> Project >> Properties >> Configuration Properties >> Linker >> Enable Incremental Linking: No (/INCREMENTAL:NO)`
+
+The example itself is taken from ["Link our program to a Boost library"](http://www.boost.org/doc/libs/1_46_1/more/getting_started/windows.html#link-your-program-to-a-boost-library).
+
+At a command line prompt push into the output folder, append `%BOOSTHOME%\stage\lib` (where the `boost_regex-XXX.dll` etc. files are found) to the `PATH` variable. Now you may run the built app as shown at the linked web page above.
 
