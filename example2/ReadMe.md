@@ -80,7 +80,7 @@ to the Linker settings:
 Incremental linking is deactivated:
 `Solution >> Project >> Properties >> Configuration Properties >> Linker >> Enable Incremental Linking: No (/INCREMENTAL:NO)`
 
-The example itself is taken from ["Link our program to a Boost library"](http://www.boost.org/doc/libs/1_46_1/more/getting_started/windows.html#link-your-program-to-a-boost-library).
+The example itself is taken from ["Link your program to a Boost library"](http://www.boost.org/doc/libs/1_46_1/more/getting_started/windows.html#link-your-program-to-a-boost-library).
 
 At a command line prompt push into the output folder, append `%BOOSTHOME%\stage\lib` (where the `boost_regex-XXX.dll` etc. files are found) to the `PATH` variable. Now you may run the built app as shown at the linked web page above.
 

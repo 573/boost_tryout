@@ -92,7 +92,7 @@ Settings in your Visual Studio Solution File
 As project type have chosen "Win32 Console Application... DLL" and left the rest on defaults in the App Wizard:
 `File >> New >> Project... >> Visual C++ >> Win32 >> Win32 Console Application >> Application Settings >> Application type: DLL`
 
-The Target Extension of the built DLL file is changed to `.pyd`, as this is required from Python version 2.5 on (see [this post](http://groups.google.com/group/boost-list/browse_thread/thread/93e2296dcde28088])):
+The Target Extension of the built DLL file is changed to `.pyd`, as this is required from Python version 2.5 on (see [this post](http://groups.google.com/group/boost-list/browse_thread/thread/93e2296dcde28088)):
 `Solution >> Project >> Properties >> Configuration Properties >> General >> General >> Target Extension: .pyd` (`Solution >> Project >> Properties >> Configuration Properties >> General >> Project Defaults >> Configuration Type >> Dynamic Library (.dll)`)
 
 The directories containing the Header-Files (include) for boost and the used python engine are added
