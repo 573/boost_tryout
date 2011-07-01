@@ -62,7 +62,7 @@ Assumes you have a valid "Visual Studio 2010" installation (won't describe comma
 Have `PYTHONHOME` and `BOOSTHOME` environment variables defined, i. e.:
 
     BOOSTHOME=S:\Home\boost_1_46_1
-	PYTHONHOME=C:\Python26
+    PYTHONHOME=C:\Python26
 
 Load [current Boost distribution](http://www.boost.org/users/download/) to `%BOOSTHOME%` make a  `%HOMEDRIVE%%HOMEPATH%\user-config.jam` file containing:
 
@@ -71,20 +71,35 @@ Load [current Boost distribution](http://www.boost.org/users/download/) to `%BOO
 	#  MSVC configuration
 	using msvc : 10.0 ;
 
-	#  Python configuration
+	#  Python configuration, the first entry is taken by default by bjam.exe
 	using python
 			  : 2.6 # version
 			  : C:/Python26 # cmd-or-prefix
 			  : C:/Python26/include # includes
 			  : C:/Python26/libs # libs
 			  : <toolset>msvc # condition
-			  ;    
+			  ;
+   
+        # This section can safely be left off, but to build optionally against the 2.3
+        # version of python, specify the python=2.3 switch on the bjam.exe command line
+	using python
+			  : 2.3 # version
+			  : C:/Python23 # cmd-or-prefix
+			  : C:/Python23/include # includes
+			  : C:/Python23/libs # libs
+			  : <toolset>msvc # condition
+			  ;   
 
 Have built library files for Boost with `bjam` at "Visual Studio Command Prompt (2010)" (which configures the needed environment by setting paths/variables):
 
     cd /D %BOOSTHOME%
-	bootstrap.bat
-	bjam toolset=msvc --build-type=complete --with-python
+    bootstrap.bat
+    bjam toolset=msvc --build-type=complete --with-python
+    echo To build the 2.3 version e. g. with the above user-config.jam settings explicitly use
+    echo bjam toolset=msvc python=2.3 --build-type=complete --with-python
+    pause
+
+Important: If you already built the library files for boost for one of the python versions e. g. python26 and now wanted to build the python23 you explicitly need to 1) call bjam.exe clean or 2) manually delete the generated stage/lib or stage/debug and the bin.v2 folders in the %BOOSTHOME% folder otherwise your own custom binaries will complain about not finding the python26.dll and you'll search some ours why that version is even searched for although you told bjam.exe to link against python23, the messages when building the libraries for Boost about that aren't very explicit.
 
 Settings in your Visual Studio Solution File
 ---
@@ -113,5 +128,5 @@ The project name must be the same as the module name: i. e. imaging you have `bo
 When built, the `*.pyd` file is created below the solution folder (or the output folder you declared, inside Debug/Release). At a command line prompt push into that folder, append `%BOOSTHOME%\stage\lib` (where the `boost_python-XXX.dll` - in other words your projects bundled `*.dll` files - are found) to the `PATH` variable and append the folder containing the `*.pyd` file - the build output folder - to the `%PYTHONPATH%` variable. Now you may run `%PYTHONHOME%\python.exe` and therein:
 
     >>> import boost_example
-	>>> print boost_example.greet()
+    >>> print boost_example.greet()
 
