@@ -123,10 +123,10 @@ Incremental linking is deactivated:
 
 The example itself is taken from [boost.python/SimpleExample](http://wiki.python.org/moin/boost.python/SimpleExample).
 
-The project name must be the same as the module name: i. e. imaging you have `boost_example` then write `BOOST_PYTHON_MODULE(boost_example)` in the extensions `.cpp` file and the built files name will be `boost_example.pyd`, free to choose is the `*.cpp` files file name. 
+The project name must be the same as the module name: i. e. imaging you have `boost_python_example` then write `BOOST_PYTHON_MODULE(boost_python_example)` in the extensions `.cpp` file and the built files name will be `boost_python_example.pyd`, free to choose is the `*.cpp` files file name.
 
 When built, the `*.pyd` file is created below the solution folder (or the output folder you declared, inside Debug/Release). At a command line prompt push into that folder, append `%BOOSTHOME%\stage\lib` (where the `boost_python-XXX.dll` - in other words your projects bundled `*.dll` files - are found) to the `PATH` variable and append the folder containing the `*.pyd` file - the build output folder - to the `%PYTHONPATH%` variable. Now you may run `%PYTHONHOME%\python.exe` and therein:
 
-    >>> import boost_example
-    >>> print boost_example.greet()
+    >>> import boost_python_example
+	>>> print boost_python_example.greet()
 

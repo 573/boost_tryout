@@ -13,16 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Modules To Test">
+      <UniqueIdentifier>{33c0d6bc-e783-4929-b64f-079fa5c46eea}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="example.cpp">
+    <ClInclude Include="Adder_Test.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\example4a\Adder.h">
+      <Filter>Modules To Test</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="runner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ReadMe.md" />
-    <None Include="test.txt">
-      <Filter>Resource Files</Filter>
-    </None>
+    <ClCompile Include="..\example4a\Adder.cpp">
+      <Filter>Modules To Test</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
