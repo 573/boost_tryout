@@ -5,29 +5,29 @@ title: Simple Boost Example No. 3
 
 <pre>
 ========================================================================
-    DYNAMIC LINK LIBRARY : example6 Project Overview
+    DYNAMIC LINK LIBRARY : boost_python_example Project Overview
 ========================================================================
 
-AppWizard has created this example6 DLL for you.
+AppWizard has created this example3 DLL for you.
 
 This file contains a summary of what you will find in each of the files that
 make up your example6 application.
 
 
-example6.vcxproj
+example3.vcxproj
     This is the main project file for VC++ projects generated using an Application Wizard.
     It contains information about the version of Visual C++ that generated the file, and
     information about the platforms, configurations, and project features selected with the
     Application Wizard.
 
-example6.vcxproj.filters
+example3.vcxproj.filters
     This is the filters file for VC++ projects generated using an Application Wizard. 
     It contains information about the association between the files in your project 
     and the filters. This association is used in the IDE to show grouping of files with
     similar extensions under a specific node (for e.g. ".cpp" files are associated with the
     "Source Files" filter).
 
-example6.cpp
+example.cpp
     This is the main DLL source file.
 
 	When created, this DLL does not export any symbols. As a result, it
@@ -110,16 +110,23 @@ As project type have chosen "Win32 Console Application... DLL" and left the rest
 The Target Extension of the built DLL file is changed to `.pyd`, as this is required from Python version 2.5 on (see [this post](http://groups.google.com/group/boost-list/browse_thread/thread/93e2296dcde28088)):
 `Solution >> Project >> Properties >> Configuration Properties >> General >> General >> Target Extension: .pyd` (`Solution >> Project >> Properties >> Configuration Properties >> General >> Project Defaults >> Configuration Type >> Dynamic Library (.dll)`)
 
+For triggering an example execution, the directories containing the boost libraries files are added
+to the settings:
+`Solution >> Project >> Properties >> Configuration Properties >> VC++ Directories >> Executable Directories: $(BOOSTHOME)\stage\lib;$(ExecutablePath)`
+
 The directories containing the Header-Files (include) for boost and the used python engine are added
-to the C/C++-Compiler settings:
-`Solution >> Project >> Properties >> Configuration Properties >> C/C++ >> Additional Include Directories: $(BOOSTHOME);$(PYTHONHOME)\include`
+to the settings:
+`Solution >> Project >> Properties >> Configuration Properties >> VC++ Directories >> Include Directories: $(BOOSTHOME);$(PYTHONHOME)\include;$(IncludePath)`
 
 The directories containing the Library-Files for boost and the used python engine are added
-to the Linker settings:
-`Solution >> Project >> Properties >> Configuration Properties >> Linker >> Additional Library Directories: $(BOOSTHOME)\stage\lib;$(PYTHONHOME)\libs`
+to the settings:
+`Solution >> Project >> Properties >> Configuration Properties >> VC++ Directories >> Library Directories: $(BOOSTHOME)\stage\lib;$(PYTHONHOME)\libs;$(LibraryPath)`
 
 Incremental linking is deactivated:
 `Solution >> Project >> Properties >> Configuration Properties >> Linker >> Enable Incremental Linking: No (/INCREMENTAL:NO)`
+
+The execution of the example is triggered as a post-build event:
+`Solution >> Project >> Properties >> Configuration Properties >> Build Events >> Post-Build Event >> Command Line: $(ComSpec) /k set PATH=$(BOOSTHOME)\stage\lib;$(Path)&&set PYTHONPATH=$(OutputPath);$(PYTHONPATH)&&$(PYTHONHOME)\python.exe -c "import $(TargetName); print $(TargetName).greet()"`
 
 The example itself is taken from [boost.python/SimpleExample](http://wiki.python.org/moin/boost.python/SimpleExample).
 
@@ -128,5 +135,5 @@ The project name must be the same as the module name: i. e. imaging you have `bo
 When built, the `*.pyd` file is created below the solution folder (or the output folder you declared, inside Debug/Release). At a command line prompt push into that folder, append `%BOOSTHOME%\stage\lib` (where the `boost_python-XXX.dll` - in other words your projects bundled `*.dll` files - are found) to the `PATH` variable and append the folder containing the `*.pyd` file - the build output folder - to the `%PYTHONPATH%` variable. Now you may run `%PYTHONHOME%\python.exe` and therein:
 
     >>> import boost_python_example
-	>>> print boost_python_example.greet()
+    >>> print boost_python_example.greet()
 

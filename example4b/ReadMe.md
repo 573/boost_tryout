@@ -24,14 +24,11 @@ Important: If you already built the library files for boost 1) call bjam.exe cle
 Settings in your Visual Studio Solution File
 ---
 
-The directories containing the Header-Files (include) for boost are added to the C/C++-Compiler settings:
-`Solution >> Project >> Properties >> Configuration Properties >> C/C++ >> Additional Include Directories: $(BOOSTHOME)`
+The directories containing the Header-Files (include) for boost are added to the settings:
+`Solution >> Project >> Properties >> Configuration Properties >> VC++ Directories >> Include Directories: $(BOOSTHOME);$(IncludePath)`
 
-The directories containing the Library-Files for boost are added to the Linker settings:
-`Solution >> Project >> Properties >> Configuration Properties >> Linker >> Additional Library Directories: $(BOOSTHOME)\stage\lib`
-
-Incremental linking is deactivated:
-`Solution >> Project >> Properties >> Configuration Properties >> Linker >> Enable Incremental Linking: No (/INCREMENTAL:NO)`
+The directories containing the Library-Files for boost are added to the settings:
+`Solution >> Project >> Properties >> Configuration Properties >> VC++ Directories >> Library Directories: $(BOOSTHOME)\stage\lib;$(LibraryPath)`
 
 Linking for subsystem Console is activated:
 `Solution >> Project >> Properties >> Configuration Properties >> Linker >> System >> SubSystem: Console (/SUBSYSTEM:CONSOLE)`

@@ -5,7 +5,7 @@ title: Simple Boost Example No. 2
 
 <pre>
 ========================================================================
-    CONSOLE APPLICATION : example2 Project Overview
+    CONSOLE APPLICATION : boost_regex_example Project Overview
 ========================================================================
 
 AppWizard has created this example2 application for you.
@@ -27,7 +27,7 @@ example2.vcxproj.filters
     similar extensions under a specific node (for e.g. ".cpp" files are associated with the
     "Source Files" filter).
 
-example2.cpp
+example.cpp
     This is the main application source file.
 
 /////////////////////////////////////////////////////////////////////////////
@@ -70,15 +70,18 @@ As project type have chosen "Win32 Console Application" and left the rest on def
 `File >> New >> Project... >> Visual C++ >> Win32 >> Win32 Console Application >> Application Settings >> Application type: Console application`
 
 The directories containing the Header-Files (include) for boost are added
-to the C/C++-Compiler settings:
-`Solution >> Project >> Properties >> Configuration Properties >> C/C++ >> Additional Include Directories: $(BOOSTHOME)`
+to the settings:
+`Solution >> Project >> Properties >> Configuration Properties >> VC++ Directories >> Include Directories: $(BOOSTHOME);$(IncludePath)`
 
 The directories containing the Library-Files for boost are added
-to the Linker settings:
-`Solution >> Project >> Properties >> Configuration Properties >> Linker >> Additional Library Directories: $(BOOSTHOME)\stage\lib`
+to the settings:
+`Solution >> Project >> Properties >> Configuration Properties >> VC++ Directories >> Library Directories: $(BOOSTHOME)\stage\lib;$(LibraryPath)`
 
 Incremental linking is deactivated:
 `Solution >> Project >> Properties >> Configuration Properties >> Linker >> Enable Incremental Linking: No (/INCREMENTAL:NO)`
+
+The execution of the example is triggered as a post-build event:
+`Solution >> Project >> Properties >> Configuration Properties >> Build Events >> Post-Build Event >> Command Line: "$(OutputPath)$(TargetName)$(TargetExt)" < "$(ProjectDir)test.txt"`
 
 The example itself is taken from ["Link your program to a Boost library"](http://www.boost.org/doc/libs/1_46_1/more/getting_started/windows.html#link-your-program-to-a-boost-library).
 

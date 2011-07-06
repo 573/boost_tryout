@@ -43,14 +43,14 @@
     <TargetExt>.pyd</TargetExt>
     <LibraryPath>$(BOOSTHOME)\stage\lib;$(PYTHONHOME)\libs;$(LibraryPath)</LibraryPath>
     <IncludePath>$(BOOSTHOME);$(PYTHONHOME)\include;$(IncludePath)</IncludePath>
-    <ExecutablePath>$(BOOSTHOME)\stage\lib;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <ExecutablePath>$(BOOSTHOME)\stage\lib;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <TargetExt>.pyd</TargetExt>
     <LibraryPath>$(BOOSTHOME)\stage\lib;$(PYTHONHOME)\libs;$(LibraryPath)</LibraryPath>
     <IncludePath>$(BOOSTHOME);$(PYTHONHOME)\include;$(IncludePath)</IncludePath>
-    <ExecutablePath>$(BOOSTHOME)\stage\lib;$(VCInstallDir)bin;$(WindowsSdkDir)bin\NETFX 4.0 Tools;$(WindowsSdkDir)bin;$(VSInstallDir)Common7\Tools\bin;$(VSInstallDir)Common7\tools;$(VSInstallDir)Common7\ide;$(ProgramFiles)\HTML Help Workshop;$(FrameworkSDKDir)\bin;$(MSBuildToolsPath32);$(VSInstallDir);$(SystemRoot)\SysWow64;$(FxCopDir);$(PATH);</ExecutablePath>
+    <ExecutablePath>$(BOOSTHOME)\stage\lib;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

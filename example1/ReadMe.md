@@ -5,22 +5,22 @@ title: Simple Boost Example No. 1
 
 <pre>
 ========================================================================
-    CONSOLE APPLICATION : example Project Overview
+    CONSOLE APPLICATION : boost_lambda_example Project Overview
 ========================================================================
 
-AppWizard has created this example application for you.
+AppWizard has created this example1 application for you.
 
 This file contains a summary of what you will find in each of the files that
-make up your example application.
+make up your example1 application.
 
 
-example.vcxproj
+example1.vcxproj
     This is the main project file for VC++ projects generated using an Application Wizard.
     It contains information about the version of Visual C++ that generated the file, and
     information about the platforms, configurations, and project features selected with the
     Application Wizard.
 
-example.vcxproj.filters
+example1.vcxproj.filters
     This is the filters file for VC++ projects generated using an Application Wizard. 
     It contains information about the association between the files in your project 
     and the filters. This association is used in the IDE to show grouping of files with
@@ -64,8 +64,8 @@ As project type have chosen "Win32 Console Application" and left the rest on def
 `File >> New >> Project... >> Visual C++ >> Win32 >> Win32 Console Application >> Application Settings >> Application type: Console application`
 
 The directories containing the Header-Files (include) for boost are added
-to the C/C++-Compiler settings:
-`Solution >> Project >> Properties >> Configuration Properties >> C/C++ >> Additional Include Directories: $(BOOSTHOME)`
+to the settings:
+`Solution >> Project >> Properties >> Configuration Properties >> VC++ Directories >> Include Directories: $(BOOSTHOME);$(InludePath)`
 
 Incremental linking is deactivated:
 `Solution >> Project >> Properties >> Configuration Properties >> Linker >> Enable Incremental Linking: No (/INCREMENTAL:NO)`
