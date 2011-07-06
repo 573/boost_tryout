@@ -2,6 +2,11 @@
 *.swp
 *~
 _site
+Debug
+Release
 *.suo
-Debug/
-Release/
+*.opensdf
+*.sdf
+ipch
+*.vcxproj.user
+*.bak

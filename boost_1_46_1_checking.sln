@@ -1,35 +1,50 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example1", "example1\example1.vcxproj", "{C1114124-6D50-4361-B700-0EE4069C3A0E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_lambda_example", "example1\example1.vcxproj", "{C1114124-6D50-4361-B700-0EE4069C3A0E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "example2", "example2\example2.vcxproj", "{9D548719-5CC8-449D-A494-1436D28568F9}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_regex_example", "example2\example2.vcxproj", "{9D548719-5CC8-449D-A494-1436D28568F9}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_example", "example3\example3.vcxproj", "{D5FF08BB-55B9-4157-B05A-E15540DC9A43}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_python_example", "example3\example3.vcxproj", "{D5FF08BB-55B9-4157-B05A-E15540DC9A43}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{387B66D3-AEB3-4386-9F0E-E9D5424A35FB}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_test_test_cases", "example4b\example4b.vcxproj", "{8DEB9B82-A448-4EAF-B117-0E6D81578465}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "boost_test_main_app", "example4a\example4a.vcxproj", "{6E7B00EA-20EA-4246-B70A-F88897F0C8D1}"
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = boost_1_46_1_checking.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C1114124-6D50-4361-B700-0EE4069C3A0E}.Debug|Win32.ActiveCfg = Release|Win32
-		{C1114124-6D50-4361-B700-0EE4069C3A0E}.Debug|Win32.Build.0 = Release|Win32
+		{C1114124-6D50-4361-B700-0EE4069C3A0E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C1114124-6D50-4361-B700-0EE4069C3A0E}.Debug|Win32.Build.0 = Debug|Win32
 		{C1114124-6D50-4361-B700-0EE4069C3A0E}.Release|Win32.ActiveCfg = Release|Win32
 		{C1114124-6D50-4361-B700-0EE4069C3A0E}.Release|Win32.Build.0 = Release|Win32
-		{9D548719-5CC8-449D-A494-1436D28568F9}.Debug|Win32.ActiveCfg = Release|Win32
-		{9D548719-5CC8-449D-A494-1436D28568F9}.Debug|Win32.Build.0 = Release|Win32
+		{9D548719-5CC8-449D-A494-1436D28568F9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9D548719-5CC8-449D-A494-1436D28568F9}.Debug|Win32.Build.0 = Debug|Win32
 		{9D548719-5CC8-449D-A494-1436D28568F9}.Release|Win32.ActiveCfg = Release|Win32
 		{9D548719-5CC8-449D-A494-1436D28568F9}.Release|Win32.Build.0 = Release|Win32
-		{D5FF08BB-55B9-4157-B05A-E15540DC9A43}.Debug|Win32.ActiveCfg = Release|Win32
-		{D5FF08BB-55B9-4157-B05A-E15540DC9A43}.Debug|Win32.Build.0 = Release|Win32
+		{D5FF08BB-55B9-4157-B05A-E15540DC9A43}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D5FF08BB-55B9-4157-B05A-E15540DC9A43}.Debug|Win32.Build.0 = Debug|Win32
 		{D5FF08BB-55B9-4157-B05A-E15540DC9A43}.Release|Win32.ActiveCfg = Release|Win32
 		{D5FF08BB-55B9-4157-B05A-E15540DC9A43}.Release|Win32.Build.0 = Release|Win32
+		{8DEB9B82-A448-4EAF-B117-0E6D81578465}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8DEB9B82-A448-4EAF-B117-0E6D81578465}.Debug|Win32.Build.0 = Debug|Win32
+		{8DEB9B82-A448-4EAF-B117-0E6D81578465}.Release|Win32.ActiveCfg = Release|Win32
+		{8DEB9B82-A448-4EAF-B117-0E6D81578465}.Release|Win32.Build.0 = Release|Win32
+		{6E7B00EA-20EA-4246-B70A-F88897F0C8D1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6E7B00EA-20EA-4246-B70A-F88897F0C8D1}.Debug|Win32.Build.0 = Debug|Win32
+		{6E7B00EA-20EA-4246-B70A-F88897F0C8D1}.Release|Win32.ActiveCfg = Release|Win32
+		{6E7B00EA-20EA-4246-B70A-F88897F0C8D1}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
